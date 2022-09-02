@@ -1,0 +1,8 @@
+<mat-tab-group >
+    <mat-tab *ngIf="authenticationservice.isLoggedIn()"  label="Sensor Module"><app-sensor></app-sensor></mat-tab>
+    <mat-tab *ngIf="authenticationservice.isLoggedIn()" label="Organization Module"><app-organization></app-organization></mat-tab>
+    <mat-tab *ngIf="authenticationservice.isLoggedIn()" label="User Module"><app-user></app-user></mat-tab>
+    <mat-tab *ngIf="authenticationservice.isLoggedIn()" label="License Module"><app-license></app-license></mat-tab>
+    
+</mat-tab-group>
+<app-footer></app-footer>

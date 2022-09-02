@@ -1,0 +1,31 @@
+.example-spacer {
+  flex: 1 1 auto;
+  background: linear-gradient(90deg,hsla(205,46%,30%,1) 0%, hsla(260,29%,36%,1) 100%);
+  
+}
+.example-icon
+{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+.a-tab
+{
+  color: white;
+  font-size:small;
+  padding-left: 0.5%;
+}
+.a-logout
+{
+  font-size: medium;
+  color: white;
+  padding-right: 0.5%;
+}
+.a-tab.active-link
+{
+  color: gold;
+  font-weight: bold;
+}

@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <form action="#">
+      <fieldset>
+        <br>
+        <h2 class="text-center">Search your Sensor</h2>
+        <nav class="navbar">
+          <input type="text" name="sensorId" [(ngModel)]="userId" (ngModelChange)="Search()" class="form-control"
+            placeholder="Enter the Sensor Id....">
+        </nav>
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+  
+        <div class="panel panel-primary"
+          *ngFor="let sensor of sensors | paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength }">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{sensor.sensorName}}
+            </h3>
+          </div>
+          <table class="center">
+            <tr>
+              <td>
+                Sensor ID
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.id}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                User ID
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.userId}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                Sensor Name
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.sensorName}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                Organisational ID
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.orgId}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                Sensor Status
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.status}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                Threshold Value
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.threshold}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                License ID
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.licenseId}}<br>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftsidecolumn">
+                Creation Time
+              </td>
+              <td class="rightsidecolumn">
+                : {{sensor.creationTime}}<br>
+              </td>
+            </tr>
+  
+  
+          </table><br>
+        </div>
+      </fieldset>
+    </form>
+    </div>
+  </div>

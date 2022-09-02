@@ -1,0 +1,17 @@
+<p *ngIf="authenticationService.isSuccess">
+  <mat-toolbar class="example-spacer">
+  <span class="example-icon" routerLink="/api"><img src="/assets/img/kseminlogo.png" width = "70" height = "50"></span>
+  <a class="a-tab" routerLink="api" routerLinkActive="active-link"> API</a>
+  <a class="a-tab" routerLink="aboutus" routerLinkActive="active-link"> About Us</a>
+  <span class="example-spacer"></span>
+ 
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <a class="a-logout" (click)="logout()">Logout</a>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon class="a-logout" (click) = "logout()">logout</mat-icon>
+ </button>
+</mat-toolbar>
+</p>
+<router-outlet></router-outlet>
+

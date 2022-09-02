@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+      <form action="#">
+        <fieldset>
+          <br>
+          <h2 class="text-center">Search your Sensor</h2>
+          <nav class="navbar">
+            <input type="text" name="sensorId" [(ngModel)]="userId" (ngModelChange)="Search()" class="form-control"
+              placeholder="Enter the Sensor Id....">
+          </nav>
+          <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+    
+          <div class="panel panel-primary"
+            *ngFor="let license of licenses | paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength }">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                {{license.licenseId}}
+              </h3>
+            </div>
+            <table class="center">
+              <tr>
+                <td>
+                  License Id
+                </td>
+                <td class="rightsidecolumn">
+                  : {{license.licenseId}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  Organization Id
+                </td>
+                <td class="rightsidecolumn">
+                  : {{license.orgId}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User ID
+                </td>
+                <td class="rightsidecolumn">
+                  : {{license.userId}}<br>
+                </td>
+              </tr>    
+            </table><br>
+          </div>
+        </fieldset>
+      </form>
+      </div>
+    </div>
+  

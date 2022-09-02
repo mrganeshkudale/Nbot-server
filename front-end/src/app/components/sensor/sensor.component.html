@@ -1,0 +1,6 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab *ngIf="displayUpdator()" label="Delete Sensor"><app-deletesensor></app-deletesensor></mat-tab>
+  <mat-tab *ngIf="displayreader()" label="Add Sensor"><app-addsensor></app-addsensor></mat-tab>
+  <mat-tab  label="Search Sensor"><app-searchsensor></app-searchsensor>></mat-tab>
+  <mat-tab *ngIf="displayUpdator()" label="Update Sensor"><app-updatesensor></app-updatesensor>></mat-tab>
+</mat-tab-group>

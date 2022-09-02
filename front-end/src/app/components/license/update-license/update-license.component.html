@@ -1,0 +1,48 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">   
+            <br>                     
+          <h2>Update An Existing Sensor</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+            <form id="contact-form" class="form" action="#" method="POST" role="form">
+                <div  >
+                    <label for="User_Role" class="form-label">Choose your Organization</label>
+                    <select  class="form-control" (change)="selectChangeHandlerOrg($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let org of orgs" [value]="org.orgId">{{org.orgName}}</option>
+                    </select>  
+                </div>                        
+                <div  >
+                    <label for="User_Role" class="form-label">Choose your User Id</label>
+                    <select  class="form-control" (change)="selectChangeHandlerUser($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+                    </select>  
+                </div>       
+                <div  >
+                    <label for="User_Role" class="form-label">Choose your License Id</label>
+                    <select  class="form-control" (change)="selectChangeHandlerLicense($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let license of licenses" [value]="license.licenseId">{{license.licenseId}}</option>
+                    </select>  
+                </div>                     
+                <div >
+                    <label class="form-label" for="email">License Status</label>
+                    <input class="form-control" [(ngModel)] = "license.licenseStatus" type="radio" id="html" tabindex="2" name="fav_language" value=true>
+                        <label class="form-control" for="html">True</label>
+                        <input class="form-control" [(ngModel)] = "license.licenseStatus" type="radio" id="css" name="fav_language" tabindex="3" value=false>
+                        <label class="form-control" for="css">False</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-start-order" >Send Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

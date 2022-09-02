@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+      <form action="#">
+        <fieldset>
+          <br>
+          <h2 class="text-center">Search User
+          </h2>
+          <nav class="navbar">
+            <input type="text" name="sensorId" [(ngModel)]="userId" (ngModelChange)="Search()" class="form-control"
+              placeholder="Enter the User Id....">
+          </nav>
+          <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+    
+          <div class="panel panel-primary"
+            *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalUserLength }">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                {{user.id}}
+              </h3>
+            </div>
+            <table class="center">
+              <tr>
+                <td>
+                  User ID
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.id}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User Name
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.name}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User Email
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.username}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User Role
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.usrRole}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User Activation Status
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.status}}<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="leftsidecolumn">
+                  User Profile Creation Time
+                </td>
+                <td class="rightsidecolumn">
+                  : {{user.creationTime}}<br>
+                </td>
+              </tr>
+            </table><br>
+          </div>
+        </fieldset>
+      </form>
+      </div>
+    </div>
+  

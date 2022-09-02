@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="text-center">
+            <h1>Sign Up</h1>
+            <h5>Please Enter your Details</h5>
+  
+          </div>
+          <form>
+            <form  #signInForm="ngForm">
+                <div class="mb-3">
+                    
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input type="email" [(ngModel)]="user.username" name="username" id="username" placeholder="Enter your Email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input type="email"  [(ngModel)]="user.name" name="name" id="name" placeholder="Enter your FullName" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
+                  </div>
+             
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"></label>
+                <input type="password"  [(ngModel)]="user.password" placeholder="Enter your Email" name="password" id="password">
+              </div>
+             
+              <button type="submit" class="btn btn-primary" (click)="registerNow()">Signup</button>
+            </form>     
+            <p class="color small fw-bold mt-2 pt-1 mb-0">Already have an account?<a class="text-color form-text" routerLink="/login"> Sign In</a>               
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

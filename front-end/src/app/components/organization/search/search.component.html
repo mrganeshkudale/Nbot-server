@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <h2 class="text-center">Search Your Organization</h2>
+    <nav class="navbar">
+      <input type="text" name="orgId" [(ngModel)]="orgId" (ngModelChange)="Search()" class="form-control"
+        placeholder="Enter the Organization Id....">
+    </nav>
+    <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+    <div class="panel panel-primary"
+      *ngFor="let org of orgs | paginate: { itemsPerPage: 5, currentPage: page, totalItems: totalLength }">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{org.orgName}}
+        </h3>
+      </div>
+      <table class="center">
+        <tr>
+          <td>
+            Organization ID
+          </td>
+          <td class="rightsidecolumn">
+            : {{org.orgId}}<br>
+          </td>
+        </tr>
+        <tr>
+          <td class="leftsidecolumn">
+            Organization Name
+          </td>
+          <td class="rightsidecolumn">
+            : {{org.orgName}}<br>
+          </td>
+        </tr>
+        <tr>
+          <td class="leftsidecolumn">
+            Organization Status
+          </td>
+          <td class="rightsidecolumn">
+            : {{org.orgStatus}}<br>
+          </td>
+        </tr>
+        <tr>
+          <td class="leftsidecolumn">
+            Organization Id creation Time
+          </td>
+          <td class="rightsidecolumn">
+            : {{org.creationTime}}<br>
+          </td>
+        </tr>
+      </table><br>
+    </div>
+  </div>
+</div>

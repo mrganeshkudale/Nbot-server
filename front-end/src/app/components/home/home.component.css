@@ -1,0 +1,45 @@
+.banner
+{
+    background-image:url('/assets/img/bannering.jpg');
+    height:90%;
+    background-position: center top;
+    background-size: cover;
+}
+.banner h1 
+{
+    color:var(--secondary-color);
+    font-size:30px;
+    font-weight: bold;
+    top:90%;
+    left:40%;
+    position:absolute;
+}
+.stepBox
+{
+    background-color: var(--secondary-color);
+    padding:10px 10px;
+    border-radius:5px;
+    text-align:center;
+}
+.stepBox h1 
+{
+    font-size:45px;
+    font-weight:bold;
+    color: var(--primary-color);
+}
+.stepBox p 
+{
+    font-size:25px;
+    color:#fff;
+}
+.stepBox p:hover
+{
+    color: var(--primary-color);
+}
+.highlight
+{
+    color:var(--primary-color);
+    font-weight:bold;
+    font-size: 25px;
+    
+    }

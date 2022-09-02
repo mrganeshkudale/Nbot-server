@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">   
+            <br>                     
+          <h2>Update An Existing Sensor</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+            <form  class="form" action="#" method="POST" role="form">
+                <div  >
+                    <label for="User_Role" class="form-label">Choose your Organization</label>
+                    <select  class="form-control" (change)="selectChangeHandlerOrg($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let org of orgs" [value]="org.orgId">{{org.orgName}}</option>
+                    </select>  
+                </div>
+                <div  >
+                    <label for="User_Role" class="form-label">Choose The User </label>
+                    <select  class="form-control" (change)="selectChangeHandlerUser($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let user of users" [value]="user.id">{{user.name}}</option>
+                    </select>  
+                </div>          
+                <div >
+                    <label class="form-label" for="name">New User Name</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name" placeholder="Employee Name..." tabindex="1" required>
+                </div>                    
+                <div >
+                    <label class="form-label" for="email">User Status</label>
+                    <input class="statuscol" type="radio" id="html" [(ngModel)]="user.status" tabindex="2" name="fav_language" value="true">
+                        <label class="statuscol" for="html">True</label>
+                        <input class="statuscol" type="radio" id="css" name="fav_language" [(ngModel)]="user.status" tabindex="3" value="false">
+                        <label class="statuscol" for="css">False</label>
+                </div>
+                <div  >
+                    <label for="User_Role" class="form-label">Choose The User Role</label>
+                    <select  class="form-control" (change)="selectChangeHandler($event)" placeholder="Chose your Organisation" tabindex="3">  
+                        <option *ngFor="let role of roles" [value]="role.userRoleId">{{role.userRole}}</option>
+                    </select>  
+                </div>          
+                <div class="text-center">
+                    <button type="submit" class="btn btn-start-order" (click)="updateNow()">Send Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>

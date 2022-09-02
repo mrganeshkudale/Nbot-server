@@ -1,0 +1,7 @@
+<mat-tab-group mat-align-tabs="center">
+    <mat-tab *ngIf="displayUpdator()" label="Delete User"><app-delete-user></app-delete-user></mat-tab>
+    <mat-tab *ngIf="displayUpdator()" label="Add User"><app-add-user></app-add-user></mat-tab>
+    <mat-tab *ngIf="displayUpdator()" label="Search User"><app-search-user></app-search-user></mat-tab>
+    <mat-tab *ngIf="displayUpdator()" label="Update User"><app-update-user></app-update-user></mat-tab>
+  </mat-tab-group>
+  
